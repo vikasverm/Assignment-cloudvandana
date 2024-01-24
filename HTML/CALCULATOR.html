@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+body{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+.calculator
+{
+width: 450px;
+padding: 30px 30px 39px 30px;
+height: 490px;
+background-color: rgb(2, 0, 0);
+border-bottom: 10px solid rgb(21, 33, 31);
+border-right: 10px solid rgb(21, 33, 31);
+border-radius: 10% ;
+box-shadow: 0px 10px 20px 20px rgb(96, 82, 82);
+}
+#res
+{
+    width: 410px;
+ font-size: 40px;
+ height: 70px;
+ border-radius: 30px;
+ padding-right: 20px;
+ background-color:#333333;
+border: 4px solid rgb(100, 100, 113);
+ color: white;
+ text-align: right;
+}
+.btns
+
+{
+padding: 20px;
+width: 100px;
+margin: 4px;
+border-radius: 10%;
+font-size: 30px;
+box-shadow: 0 0 30px rgb(0, 0, 0), 0 0 90px 10px rgb(0, 0, 0) inset;
+}
+#btn
+{
+width: 213px;
+border-radius: 30px;
+background-color: chartreuse;
+padding: 20px;
+margin: 4px;
+border-radius: 20px;
+font-size: 30px;
+box-shadow:  0 0 20px 10px rgb(0, 0, 0) ;
+
+}
+#reset
+{
+padding: 10px;
+width: 100px;
+margin-left: 8px;
+border-radius: 10%;
+font-size: 40px;
+font-weight: bold;
+color: white;
+
+background-color: rgb(255, 0, 0);
+}
+    </style>
+</head>
+<body>
+<div class="calculator">
+<div class="input-display">
+    <input type="text" value="" id="res" >
+    <input type="button" value="1" onclick="display('1')" class="btns">
+    <input type="button" value="2" onclick="display('2')" class="btns">
+    <input type="button" value="3" onclick="display('3')" class="btns">
+    <input type="button" value="C" onclick="reset()" id="reset" ><br>
+    <input type="button" value="4"onclick="display('4')" class="btns">
+    <input type="button" value="5"onclick="display('5')" class="btns">
+    <input type="button" value="6"onclick="display('6')" class="btns">
+    <input type="button" value="*"onclick="display('*')" class="btns"> <br>
+    <input type="button" value="7"onclick="display('7')" class="btns">
+    <input type="button" value="8"onclick="display('8')" class="btns">
+    <input type="button" value="9"onclick="display('9')" class="btns">
+    <input type="button" value="/"onclick="display('/')" class="btns"> <br>
+    <input type="button" value="0"onclick="display('0')" class="btns">
+    <input type="button" value="00"onclick="display('00')" class="btns">
+    <input type="button" value="."onclick="display('.')" class="btns">
+
+    <input type="button" value="+"onclick="display('+')" class="btns">
+
+    
+    <input type="button" value="="onclick="calculate()" class="" id="btn">
+    <input type="button" value="%"onclick="display('%')" class="btns">
+
+    <input type="button" value="-"onclick="display('-')" class="btns"> 
+
+
+</div>
+
+</div>
+
+<script>
+  function reset() {
+    document.getElementById("res").value = "";
+}
+ 
+function display(value) {
+    document.getElementById("res").value += value;
+}
+ 
+function calculate() {
+
+    var p = document.getElementById("res").value;
+   
+        var evalu = eval(p);
+    document.getElementById("res").value = evalu;
+
+
+}
+</script>
+
+</body>
+</html>
